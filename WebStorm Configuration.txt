@@ -1,0 +1,59 @@
+WebStorm Configuration
+
+
+Dependencies:
+npm install uglify-js -gCopy
+Libsass (sassc.exe)
+
+Themes:
+libsass:
+C:\libsass\sassc.exe
+
+-m $FilePath$ $FileParentDir$\..\css\skins\$FileNameWithoutExtension$.cssCopy
+ 
+
+libsass min:
+C:\libsass\sassc.exe
+
+-t compressed -m $FilePath$ $FileParentDir$\..\css\skins\$FileNameWithoutExtension$.min.cssCopy
+
+UglifyJS:
+%USERPROFILE%\AppData\Roaming\npm\uglifyjs.cmd
+
+$FileParentDir$\src\*.js --source-map --screw-ie8 -c drop_debugger=false -o $FileParentDir$\build\theme_scripts.min.jsCopy
+ 
+
+Plugins ( wcms_widgets ):
+libsass:
+C:\libsass\sassc.exe
+
+-m $FileName$ $ProjectFileDir$\css\$FileNameWithoutExtension$.cssCopy
+ 
+
+libsass min:
+C:\libsass\sassc.exe
+
+-m -t compressed $FileName$ $ProjectFileDir$\css\$FileNameWithoutExtension$.min.cssCopy
+ 
+
+UglifyJS:
+%USERPROFILE%\AppData\Roaming\npm\uglifyjs.cmdCopy
+$ProjectFileDir$\js\enquire.min.js
+$ProjectFileDir$\js\bootstrap.min.js
+$ProjectFileDir$\js\slick.js
+$ProjectFileDir$\js\countdown/jquery.plugin.min.js
+$ProjectFileDir$\js\countdown/jquery.countdown.js
+$ProjectFileDir$\js\jquery.mCustomScrollbar.concat.min.js
+$ProjectFileDir$\js\countUp.js
+$ProjectFileDir$\js\lity.min.js
+$ProjectFileDir$\js\social_scripts.js
+$ProjectFileDir$\js\readmore.min.js
+$ProjectFileDir$\js\functions.js
+$ProjectFileDir$\js\widgets_support.js
+$ProjectFileDir$\js\widgets_scripts.js
+--source-map
+--screw-ie8
+-c drop_debugger=false
+-o
+$ProjectFileDir$\js\build\widgets_scripts.min.jsCopy
+2018-02-18 Daniel Tsinot 3rd Party, GoodToKnow, Tools
